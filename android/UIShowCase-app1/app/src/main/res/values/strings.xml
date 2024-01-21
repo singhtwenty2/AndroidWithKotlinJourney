@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">ShowCaseApp</string>
+    <string name="serever_message">Exclusive Sale 50 percent off get the latest offers</string>
+    <string name="get_started">Get Started</string>
+    <string name="todo">TODO</string>
+    <string name="submit">Submit</string>
+</resources>
