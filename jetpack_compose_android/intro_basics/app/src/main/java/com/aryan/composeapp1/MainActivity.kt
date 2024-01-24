@@ -30,7 +30,7 @@ class MainActivity : ComponentActivity() {
 }
 
 /**
- * NOTES :
+ * NOTES : CHAPTER-1
  * (1) MAIN AXIS & Cross Axis = The axis in which the new items will get placed like for
  * Row() { } New items will be placed in X-Axis where as the opposite to that
  * axis will be the Cross Axis.
