@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">ComposeApp1</string>
     <string name="title_activity_main2">MainActivity2</string>
+    <string name="title_activity_main3">MainActivity3</string>
+    <string name="title_activity_text_style">TextStyle</string>
+    <string name="title_activity_state_management">StateManagementActivity</string>
+    <string name="title_activity_text_field">TextFieldActivity</string>
 </resources>
