@@ -1,4 +1,4 @@
-package com.plcoding.stockmarketapp.ui.theme
+package com.aryan.stockmarketapp.ui.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material.MaterialTheme
