@@ -14,7 +14,6 @@ fun main(args: Array<String>) {
     io.ktor.server.netty.EngineMain.main(args)
 }
 
-@OptIn(DelicateCoroutinesApi::class)
 fun Application.module() {
     val username = "mrysgtest"
     val mongoPw = System.getenv("MONGO_PW")
