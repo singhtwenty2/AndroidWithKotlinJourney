@@ -2,7 +2,5 @@
 <resources>
 
     <style name="Theme.Material3Basics" parent="android:Theme.Material.Light.NoActionBar">
-        <item name="android:windowTranslucentStatus">false</item>
-        <item name="android:statusBarColor">@android:color/transparent</item>
     </style>
 </resources>

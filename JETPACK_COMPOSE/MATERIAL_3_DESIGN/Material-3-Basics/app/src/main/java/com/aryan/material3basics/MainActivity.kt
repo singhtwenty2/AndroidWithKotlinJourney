@@ -13,6 +13,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.core.view.WindowCompat
+import com.aryan.material3basics.lessons.BottomAppBarComposable
+import com.aryan.material3basics.lessons.BottomNavComposable
 import com.aryan.material3basics.lessons.CheckBoxComposable
 import com.aryan.material3basics.lessons.SwitchComposable
 import com.aryan.material3basics.lessons.ToolBarComposable
@@ -21,10 +23,6 @@ import com.aryan.material3basics.ui.theme.Material3BasicsTheme
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        WindowCompat.
-        setDecorFitsSystemWindows(window,false)
-
         setContent {
             Material3BasicsTheme {
                 // A surface container using the 'background' color from the theme
@@ -36,7 +34,7 @@ class MainActivity : ComponentActivity() {
                         modifier = Modifier.fillMaxSize(),
 
                     ) {
-                        ToolBarComposable()
+                        BottomNavComposable()
                     }
                 }
             }
@@ -49,6 +47,5 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun ButtonPreview() {
     Material3BasicsTheme {
-
     }
 }
