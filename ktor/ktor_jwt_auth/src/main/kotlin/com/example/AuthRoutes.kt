@@ -78,6 +78,12 @@ fun Route.signIn(
         )
         if(!isValidPassword){
             call.respond(HttpStatusCode.Conflict,"Incorrect Username Or Password :CODE 02")
+
+            println("Provided Password: ${request.password}")
+            println("Hashed Password: ${user.password}")
+            println("Salt: ${user.salt}")
+            println("Verification Result: $isValidPassword")
+
             return@post
         }
 
