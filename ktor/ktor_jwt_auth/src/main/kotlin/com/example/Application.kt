@@ -1,12 +1,14 @@
 package com.example
 
 import com.example.data.users.MongoUserDataSource
-import com.example.plugins.*
+import com.example.plugins.configureMonitoring
+import com.example.plugins.configureRouting
+import com.example.plugins.configureSecurity
+import com.example.plugins.configureSerialization
 import com.example.security.hashing.SHA256HashingService
 import com.example.security.token.JwtTokenService
 import com.example.security.token.TokenConfig
 import io.ktor.server.application.*
-import kotlinx.coroutines.DelicateCoroutinesApi
 import org.litote.kmongo.coroutine.coroutine
 import org.litote.kmongo.reactivestreams.KMongo
 
