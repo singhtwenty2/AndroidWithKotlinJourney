@@ -92,4 +92,6 @@ dependencies {
     implementation(libs.androidx.room.ktx)
     // OpenCSV
     implementation (libs.opencsv)
+    // Swipe Refresh Layout
+    implementation (libs.accompanist.swiperefresh)
 }
