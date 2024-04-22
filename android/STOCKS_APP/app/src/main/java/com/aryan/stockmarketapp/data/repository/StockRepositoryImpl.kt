@@ -2,10 +2,13 @@ package com.aryan.stockmarketapp.data.repository
 
 import com.aryan.stockmarketapp.data.csv.CSVParser
 import com.aryan.stockmarketapp.data.local.StockDatabase
+import com.aryan.stockmarketapp.data.mapper.toCompanyInfo
 import com.aryan.stockmarketapp.data.mapper.toCompanyListing
 import com.aryan.stockmarketapp.data.mapper.toCompanyListingEntity
 import com.aryan.stockmarketapp.data.remote.dto.StockApi
+import com.aryan.stockmarketapp.domain.model.CompanyInfo
 import com.aryan.stockmarketapp.domain.model.CompanyListing
+import com.aryan.stockmarketapp.domain.model.IntraDayInfo
 import com.aryan.stockmarketapp.domain.repository.StockRepository
 import com.aryan.stockmarketapp.util.Resource
 import kotlinx.coroutines.flow.Flow
@@ -19,7 +22,8 @@ import javax.inject.Singleton
 class StockRepositoryImpl @Inject constructor(
     private val api: StockApi,
     private val db: StockDatabase,
-    private val companyListingParser: CSVParser<CompanyListing>
+    private val companyListingParser: CSVParser<CompanyListing>,
+    private val interadayInfo: CSVParser<IntraDayInfo>
 ): StockRepository {
     private val dao = db.dao
 
@@ -64,6 +68,41 @@ class StockRepositoryImpl @Inject constructor(
                 ))
                 emit(Resource.Loading(false))
             }
+        }
+    }
+
+    override suspend fun getIntradayInfo(symbol: String): Resource<List<IntraDayInfo>> {
+        return try {
+            val response = api.getIntradayInfo(symbol)
+            val results = interadayInfo.parse(response.byteStream())
+            Resource.Success(results)
+        }catch (e: IOException) {
+            e.printStackTrace()
+            Resource.Error(
+                message = "Couldn't load data due to IO Exception"
+            )
+        }catch (e: HttpException) {
+            e.printStackTrace()
+            Resource.Error(
+                message = "Couldn't load data due to HTTP Exception"
+            )
+        }
+    }
+
+    override suspend fun getCompanyInfo(symbol: String): Resource<CompanyInfo> {
+        return try {
+            val result = api.getCompanyInfo(symbol)
+            Resource.Success(result.toCompanyInfo())
+        }catch (e: IOException) {
+            e.printStackTrace()
+            Resource.Error(
+                message = "Couldn't load data due to IO Exception"
+            )
+        }catch (e: HttpException) {
+            e.printStackTrace()
+            Resource.Error(
+                message = "Couldn't load data due to HTTP Exception"
+            )
         }
     }
 }

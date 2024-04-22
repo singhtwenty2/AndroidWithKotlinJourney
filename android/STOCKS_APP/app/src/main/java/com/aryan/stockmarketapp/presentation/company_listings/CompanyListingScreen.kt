@@ -1,5 +1,6 @@
 package com.aryan.stockmarketapp.presentation.company_listings
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -13,12 +14,16 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.navigation.NavHostController
+import com.aryan.stockmarketapp.presentation.navigation.NavigationRoute
+import com.aryan.stockmarketapp.ui.theme.BG_V1
 import com.google.accompanist.swiperefresh.SwipeRefresh
 import com.google.accompanist.swiperefresh.rememberSwipeRefreshState
 
 @Composable
 fun CompanyListingScreenComposable(
-    viewModel: CompanyListingViewModel = hiltViewModel()
+    viewModel: CompanyListingViewModel = hiltViewModel(),
+    navController: NavHostController
 ) {
     val state = viewModel.state
     val swipeRefreshState = rememberSwipeRefreshState(
@@ -28,6 +33,7 @@ fun CompanyListingScreenComposable(
     Column(
         modifier = Modifier
             .fillMaxSize()
+            .background(BG_V1)
     ) {
         OutlinedTextField(
             value = state.searchQuery,
@@ -61,7 +67,9 @@ fun CompanyListingScreenComposable(
                         modifier = Modifier
                             .fillMaxWidth()
                             .clickable {
-                                // TODO: Navigate to detail screen.
+                                navController.navigate(
+                                    route = "${NavigationRoute.CompanyInfo.route}/${company.symbol}"
+                                )
                             }
                             .padding(16.dp)
                     )

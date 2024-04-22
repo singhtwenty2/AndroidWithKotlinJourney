@@ -18,6 +18,8 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.aryan.stockmarketapp.domain.model.CompanyListing
+import com.aryan.stockmarketapp.ui.theme.BLUE_V1
+import com.aryan.stockmarketapp.ui.theme.PINK_V1
 
 @Composable
 fun CompanyItemComposable(
@@ -38,7 +40,7 @@ fun CompanyItemComposable(
                     text = company.name,
                     fontWeight = FontWeight.SemiBold,
                     fontSize = 16.sp,
-                    color = Color.White,
+                    color = BLUE_V1,
                     overflow = TextOverflow.Ellipsis,
                     maxLines = 1,
                     modifier = Modifier.weight(1f)
@@ -47,7 +49,7 @@ fun CompanyItemComposable(
                 Text(
                     text = company.exchange,
                     fontWeight = FontWeight.Light,
-                    color = Color.White,
+                    color = PINK_V1,
 
                     )
             }
