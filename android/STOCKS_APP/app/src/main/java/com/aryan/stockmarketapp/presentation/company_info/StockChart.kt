@@ -19,6 +19,7 @@ import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.aryan.stockmarketapp.domain.model.IntraDayInfo
+import com.aryan.stockmarketapp.ui.theme.BLUE_V1
 import kotlin.math.round
 import kotlin.math.roundToInt
 
@@ -27,7 +28,7 @@ import kotlin.math.roundToInt
 fun StockChartComposable(
     infos: List<IntraDayInfo> = emptyList(),
     modifier: Modifier = Modifier,
-    graphColor: Color = Color.Green
+    graphColor: Color = BLUE_V1
 ) {
     val spacing = 100f
     val transparentGraphColor = remember {

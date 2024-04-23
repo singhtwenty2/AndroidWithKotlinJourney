@@ -46,27 +46,27 @@ fun CompanyInfoScreenComposable(
                 Text(
                     text = company.name,
                     fontWeight = FontWeight.Bold,
-                    fontSize = 18.sp,
+                    fontSize = 25.sp,
                     overflow = TextOverflow.Ellipsis,
                     modifier = Modifier.fillMaxWidth()
                 )
-                Spacer(modifier = Modifier.height(8.dp))
+                Spacer(modifier = Modifier.height(16.dp))
                 Text(
                     text = company.symbol,
-                    fontWeight = FontWeight.Normal,
+                    fontWeight = FontWeight.Medium,
                     fontStyle = FontStyle.Italic,
-                    fontSize = 14.sp,
+                    fontSize = 18.sp,
                     modifier = Modifier.fillMaxWidth()
                 )
                 Divider(
                     modifier = Modifier
                         .fillMaxWidth()
                 )
-                Spacer(modifier = Modifier.height(8.dp))
+                Spacer(modifier = Modifier.height(16.dp))
                 Text(
                     text = "Industry: ${company.industry}",
                     fontWeight = FontWeight.Normal,
-                    fontSize = 14.sp,
+                    fontSize = 18.sp,
                     overflow = TextOverflow.Ellipsis,
                     modifier = Modifier.fillMaxWidth()
                 )
@@ -74,23 +74,27 @@ fun CompanyInfoScreenComposable(
                 Text(
                     text = "Country: ${company.country}",
                     fontWeight = FontWeight.Normal,
-                    fontSize = 14.sp,
+                    fontSize = 18.sp,
                     modifier = Modifier.fillMaxWidth()
                 )
                 Divider(
                     modifier = Modifier
                         .fillMaxWidth()
                 )
-                Spacer(modifier = Modifier.height(8.dp))
+                Spacer(modifier = Modifier.height(16.dp))
                 Text(
                     text = company.description,
                     fontWeight = FontWeight.Normal,
-                    fontSize = 12.sp,
+                    fontSize = 15.sp,
                     modifier = Modifier.fillMaxWidth()
                 )
                 Spacer(modifier = Modifier.height(16.dp))
                 if (state.stockInfos.isNotEmpty()) {
-                    Text(text = "Market Summary")
+                    Text(
+                        text = "Market Summary",
+                        fontSize = 18.sp,
+                        fontWeight = FontWeight.Bold
+                    )
                     Spacer(modifier = Modifier.height(32.dp))
                     StockChartComposable(
                         infos = state.stockInfos,
