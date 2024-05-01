@@ -43,52 +43,13 @@ fun CompanyInfoScreenComposable(
                 .padding(16.dp)
         ) {
             state.company?.let { company ->
-                Text(
-                    text = company.name,
-                    fontWeight = FontWeight.Bold,
-                    fontSize = 25.sp,
-                    overflow = TextOverflow.Ellipsis,
-                    modifier = Modifier.fillMaxWidth()
+                BasicDetailsComposable(
+                    symbol = company.symbol,
+                    name = company.name,
+                    description = company.description,
+                    country = company.country,
+                    industry = company.industry
                 )
-                Spacer(modifier = Modifier.height(16.dp))
-                Text(
-                    text = company.symbol,
-                    fontWeight = FontWeight.Medium,
-                    fontStyle = FontStyle.Italic,
-                    fontSize = 18.sp,
-                    modifier = Modifier.fillMaxWidth()
-                )
-                Divider(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                )
-                Spacer(modifier = Modifier.height(16.dp))
-                Text(
-                    text = "Industry: ${company.industry}",
-                    fontWeight = FontWeight.Normal,
-                    fontSize = 18.sp,
-                    overflow = TextOverflow.Ellipsis,
-                    modifier = Modifier.fillMaxWidth()
-                )
-                Spacer(modifier = Modifier.height(8.dp))
-                Text(
-                    text = "Country: ${company.country}",
-                    fontWeight = FontWeight.Normal,
-                    fontSize = 18.sp,
-                    modifier = Modifier.fillMaxWidth()
-                )
-                Divider(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                )
-                Spacer(modifier = Modifier.height(16.dp))
-                Text(
-                    text = company.description,
-                    fontWeight = FontWeight.Normal,
-                    fontSize = 15.sp,
-                    modifier = Modifier.fillMaxWidth()
-                )
-                Spacer(modifier = Modifier.height(16.dp))
                 if (state.stockInfos.isNotEmpty()) {
                     Text(
                         text = "Market Summary",

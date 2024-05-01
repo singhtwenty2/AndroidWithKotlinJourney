@@ -1,4 +1,4 @@
-package little_advanced
+package oops_02
 
 fun main(){
     // Chapter 1 Classes and Objects...
@@ -16,3 +16,4 @@ class Person(_name: String){ // This is a lot easier syntax then java however we
 }
 
 class DiffrentPerson(val name: String) // by putting val in the arg of class it now becomes the property of the class
+// This is also called Primary Constructor

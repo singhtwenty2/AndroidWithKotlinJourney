@@ -1,4 +1,4 @@
-package little_advanced
+package oops_02
 
 fun main() {
     // Chapter 2... Spacial Classes like Data Class and ETC...

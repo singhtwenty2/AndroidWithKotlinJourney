@@ -1,4 +1,4 @@
-package basics
+package basics_01
 
 fun main() {
     /*Chapter 3 If-else and when(Switch case)
