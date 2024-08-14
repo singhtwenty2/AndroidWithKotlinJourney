@@ -18,9 +18,6 @@ Contributions and feedback are welcome! If you'd like to contribute, please fork
 ## Documentation
 Each Android project contains code comments and explanations to guide through the code. 📚
 
-## Acknowledgments
-Special thanks to Rishab Kumar R for his valuable help. 🙏
-
 ## Contact
 Feel free to connect with me:
 - Email: mrysg.test@gmail.com
